@@ -21,6 +21,7 @@ import (
 	"net/url"
 	"os"
 	"path/filepath"
+	"sync"
 
 	"github.com/container-storage-interface/spec/lib/go/csi"
 	"google.golang.org/grpc"
@@ -42,6 +43,7 @@ type Driver struct {
 	volumeTypeMap types.NamespacedName
 	driverName    string
 	driverVersion string
+	volMutex  sync.Mutex
 }
 
 var _ csi.IdentityServer = &Driver{}
