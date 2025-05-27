@@ -62,7 +62,8 @@ The label key is `node-cache.gke.io`. Values may be:
 
 * **tmpfs**. This creates a ramdisk that persists across pod restarts. The label
   `node-cache-size.gke.io` must also be on the node, which sets the size of
-  this disk in MiB.
+  this disk in bytes. It uses k8s resource units, for example,
+  `node-cache-size.gke.io=50Gi`.
 
   The memory accounting for this ramdisk is a little confusing -- it appears
   that usage can be accounted to the writing container, rather than the CSI
