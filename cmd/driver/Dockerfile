@@ -51,15 +51,15 @@ COPY --from=debian /sbin/mke2fs /sbin/
 COPY --from=debian /sbin/mkfs.ext2 /sbin/mkfs.ext3 /sbin/mkfs.ext4 /sbin/
 
 COPY --from=debian \
-    /lib/x86_64-linux-gnu/libselinux.so.1 \
-    /lib/x86_64-linux-gnu/libblkid.so.1 \
-    /lib/x86_64-linux-gnu/libpcre2-8.so.0 \
-    /lib/x86_64-linux-gnu/libmount.so.1 \
-    /lib/x86_64-linux-gnu/libudev.so.1 \
-    /lib/x86_64-linux-gnu/libcom_err.so.2 \
-    /lib/x86_64-linux-gnu/libe2p.so.2 \
-    /lib/x86_64-linux-gnu/libext2fs.so.2 \
-    /lib/x86_64-linux-gnu/libuuid.so.1 \
+    /lib/x86_64-linux-gnu/libselinux.so.* \
+    /lib/x86_64-linux-gnu/libblkid.so.* \
+    /lib/x86_64-linux-gnu/libpcre2-8.so.* \
+    /lib/x86_64-linux-gnu/libmount.so.* \
+    /lib/x86_64-linux-gnu/libudev.so.* \
+    /lib/x86_64-linux-gnu/libcom_err.so.* \
+    /lib/x86_64-linux-gnu/libe2p.so.* \
+    /lib/x86_64-linux-gnu/libext2fs.so.* \
+    /lib/x86_64-linux-gnu/libuuid.so.* \
     /lib/x86_64-linux-gnu/
 
 FROM distroless AS check
@@ -69,7 +69,7 @@ COPY --from=debian /bin/sh /bin/bash /bin/grep /bin/
 COPY --from=builder /src/hack/print-missing-deps.sh /print-missing-deps.sh
 
 COPY --from=debian \
-    /lib/x86_64-linux-gnu/libtinfo.so.6 \
+    /lib/x86_64-linux-gnu/libtinfo.so.* \
     /lib/x86_64-linux-gnu/
 
 SHELL ["/bin/bash", "-c"]
