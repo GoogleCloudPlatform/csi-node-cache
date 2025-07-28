@@ -43,7 +43,7 @@ type Driver struct {
 	volumeTypeMap types.NamespacedName
 	driverName    string
 	driverVersion string
-	volMutex  sync.Mutex
+	volMutex      sync.Mutex
 }
 
 var _ csi.IdentityServer = &Driver{}
