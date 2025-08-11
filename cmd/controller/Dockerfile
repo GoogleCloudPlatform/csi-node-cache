@@ -33,9 +33,9 @@ COPY --from=debian /usr/bin/ldd /usr/bin/find /usr/bin/xargs /usr/bin/
 COPY --from=debian /bin/sh /bin/bash /bin/grep /bin/
 COPY --from=builder /src/hack/print-missing-deps.sh /print-missing-deps.sh
 COPY --from=debian \
-    /lib/x86_64-linux-gnu/libtinfo.so.6 \
-    /lib/x86_64-linux-gnu/libselinux.so.1 \
-    /lib/x86_64-linux-gnu/libpcre2-8.so.0 \
+    /lib/x86_64-linux-gnu/libtinfo.so.* \
+    /lib/x86_64-linux-gnu/libselinux.so.* \
+    /lib/x86_64-linux-gnu/libpcre2-8.so.* \
     /lib/x86_64-linux-gnu/
 
 SHELL ["/bin/bash", "-c"]
