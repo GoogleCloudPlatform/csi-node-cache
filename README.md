@@ -9,6 +9,12 @@ It currently supports ram volumes, local SSD, and block storage (persistent disk
 and hyperdisk). The local SSD and block storage support is specific to GKE
 (Google's managed kubernetes service on GCP).
 
+## Note
+
+This is not an officially supported Google product. This project is not
+eligible for the [Google Open Source Software Vulnerability Rewards
+Program](https://bughunters.google.com/open-source-security).
+
 ## Set Up
 
 ### Artifact Registry
