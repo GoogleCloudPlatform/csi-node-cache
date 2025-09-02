@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # This should be build from the repo root.
-FROM golang:1.22 AS builder
+FROM golang:1.23 AS builder
 WORKDIR /src
 COPY . .
 RUN go build -ldflags "-extldflags=static" ./cmd/controller
