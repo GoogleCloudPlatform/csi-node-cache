@@ -16,7 +16,7 @@
 
 ARG VERSION
 
-FROM golang:1.22 AS builder
+FROM golang:1.23 AS builder
 WORKDIR /src
 COPY . .
 RUN go build -ldflags "-extldflags=static -X main.driverVersion=$VERSION" ./cmd/driver

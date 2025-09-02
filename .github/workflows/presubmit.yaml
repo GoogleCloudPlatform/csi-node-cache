@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-go@v5
       with:
-        go-version: 1.22 # Keep in sync with ./go.mod
+        go-version: 1.23 # Keep in sync with ./go.mod
     - name: verify
       run: ./hack/verify-all.sh
     - name: unittest
