@@ -6,7 +6,7 @@ require (
 	github.com/container-storage-interface/spec v1.13.0
 	golang.org/x/net v0.58.0
 	google.golang.org/api v0.293.0
-	google.golang.org/grpc v1.83.1
+	google.golang.org/grpc v1.83.2
 	gotest.tools/v3 v3.5.2
 	k8s.io/api v0.36.3
 	k8s.io/apimachinery v0.36.3
